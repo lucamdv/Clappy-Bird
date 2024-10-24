@@ -1,4 +1,4 @@
-<h1 align="center" style="font-weight: bold;">Clappy Bird 🐦</h1>
+<h1 align="center" style="font-weight: bold;">Crossy Road 🐔</h1>
 
 <p align="center">
  <a href="#colab">Colaboradores</a> 
