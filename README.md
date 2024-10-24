@@ -22,7 +22,7 @@ Nossa equipe:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://github.com/user-attachments/assets/14cdaefb-7f40-49a9-8d6f-26b3857fed92" width="100px;" alt="Foto de João Pedro"/><br>
+        <img src="https://github.com/user-attachments/assets/14cdaefb-7f40-49a9-8d6f-26b3857fed92" width="100px;" height="100px;"alt="Foto de João Pedro"/><br>
         <sub>
           <b>João Pedro Gomes</b>
          <br>
@@ -32,7 +32,7 @@ Nossa equipe:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://github.com/user-attachments/assets/4c560164-49bd-4093-b63d-be1a0691437b" width="100px;" alt="Foto de Luca"/><br>
+        <img src="https://github.com/user-attachments/assets/4c560164-49bd-4093-b63d-be1a0691437b" width="100px;" height="100px;" alt="Foto de Luca"/><br>
         <sub>
           <b>Luca Monteiro</b>
          <br>
