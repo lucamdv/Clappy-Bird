@@ -54,17 +54,31 @@ int play_game() {
     srand(time(NULL));
     init_game();
     long last_frame_time = get_time();
+    
     while (!game_over) {
         long current_time = get_time();
-        if (current_time - last_frame_time >= 200) {
-            char input = get_keypress();
+        
+        // Verifica se Esc foi pressionado
+        if (keyhit()) {
+            char input = readch();
+            if (input == 27) { // 27 é o código ASCII para Esc
+                game_over = 1; // Encerra o jogo
+                break; // Sai do loop do jogo
+            }
             handle_input(input);
+        }
+
+        if (current_time - last_frame_time >= 200) {
             update();
-            render_game();
             last_frame_time = current_time;
         }
+        
         delay(16);  // Delay de 16ms para limitar a 60 FPS
+        render_game(); // Atualiza a renderização do jogo
     }
-    printf("Game Over!\n");
+    
+    printf("Game Over! Pressione Enter para voltar ao menu.\n");
+    while (get_keypress() != 10); // Espera até que Enter seja pressionado
+    game_over = 0; // Reseta o estado do jogo
     return 0;
 }

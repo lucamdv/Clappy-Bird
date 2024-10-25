@@ -1,18 +1,16 @@
 CC = gcc
 CFLAGS = -Iinclude
-SRC = src/main.c src/game.c src/input.c src/screen.c src/keyboard.c src/timer.c
-OBJ = build/main.o build/game.o build/input.o build/screen.o build/keyboard.o build/timer.o
+SRC_FILES = src/main.c src/game.c src/input.c src/screen.c src/keyboard.c src/timer.c src/menu.c
+OBJ_FILES = $(SRC_FILES:src/%.c=build/%.o)
+TARGET = crossy_road
 
-# Cria o executável
-all: crossy_road
+all: $(TARGET)
 
-crossy_road: $(OBJ)
-	$(CC) -o $@ $^
+$(TARGET): $(OBJ_FILES)
+	$(CC) -o $(TARGET) $(OBJ_FILES)
 
-# Regras para compilar os arquivos de origem
 build/%.o: src/%.c
-	mkdir -p build
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf build/*.o crossy_road
+	rm -f build/*.o $(TARGET)

@@ -25,5 +25,6 @@ extern Car cars[];
 void init_game();
 void update();
 int play_game();
+long get_time(); // Adicione a declaração
 
 #endif // GAME_H
