@@ -8,8 +8,8 @@ void clear_screen();
 // Renderiza o jogo na tela
 void render_game();
 
-#define WIDTH 80  // Ajuste conforme o tamanho da sua tela
-#define HEIGHT 24 // Ajuste conforme o tamanho da sua tela
+#define TITLE_WIDTH 80  // Ajuste conforme o tamanho da sua tela
+#define TITLE_HEIGHT 24 // Ajuste conforme o tamanho da sua tela
 
 // Terminal control sequences
 #define ESC            "\033"

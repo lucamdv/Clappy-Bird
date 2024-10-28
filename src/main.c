@@ -13,6 +13,9 @@ int main() {
     timerInit(50);
     screenUpdate();
 
+    // Carrega recordes antes de exibir o menu
+    load_high_scores(); 
+
     // Exibe o menu inicial
     display_menu();
     

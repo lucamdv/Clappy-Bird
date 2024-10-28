@@ -11,7 +11,13 @@ void clear_screen() {
 // Renderiza o jogo na tela
 void render_game() {
     clear_screen();  // Limpar a tela antes de desenhar
-
+ // Exibe a pontuação no canto superior da tela
+    screenGotoxy(1, 1); // Ajuste a posição conforme necessário
+    printf("Pontuação: %d", score);
+    
+    // Atualiza a tela
+    screenUpdate();
+    
     // Desenhar a moldura
     for (int x = 0; x < WIDTH + 2; x++) printf("-");
     printf("\n");

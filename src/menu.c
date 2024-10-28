@@ -18,19 +18,18 @@ void display_menu() {
     // Exibir o título "Crossy Road" centralizado
     char *title = "Crossy Road";
     int title_length = strlen(title);
-    int title_startX = (WIDTH - title_length) / 2; // Centralizar o título horizontalmente
+    int title_startX = (TITLE_WIDTH - title_length) / 2; // Centralizar o título horizontalmente
     int title_startY = 8; // Posição vertical do título
 
     // Exibe o título com uma fonte maior
     screenSetColor(YELLOW, DARKGRAY);
     screenGotoxy(title_startX, title_startY);
-    printf("%s", title);
+    printf("%s\n", title); // Adiciona uma nova linha após o título
 
     // Exibir as opções do menu centralizadas abaixo do título
-    int startX = (WIDTH - strlen(menu_items[0])) / 2; // Centralizar os itens do menu horizontalmente
-    int startY = 12; // Posição vertical dos itens do menu
-    
+    int startY = title_startY + 2; // Posição vertical das opções do menu
     for (int i = 0; i < total_menu_items; i++) {
+        int startX = (TITLE_WIDTH - strlen(menu_items[i])) / 2; // Centralizar cada item do menu horizontalmente
         screenGotoxy(startX, startY + i);
         if (i == current_option) {
             screenSetColor(RED, DARKGRAY); // Destacar a opção selecionada
