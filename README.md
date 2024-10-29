@@ -21,10 +21,10 @@
 <h2>Como Executar</h2>
 <ol>
   <li>Clone o repositório:
-    <pre><code>git clone https://github.com/seu-usuario/crossy-road-em-c.git</code></pre>
+    <pre><code>git clone https://github.com/seu-usuario/Crossy-road.git</code></pre>
   </li>
   <li>Compile o código:
-    <pre><code>gcc main.c -o crossy-road</code></pre>
+    <pre><code>gcc main.c -o crossy_road</code></pre>
   </li>
   <li>Execute o jogo:
     <pre><code>./crossy_road</code></pre>
