@@ -1,5 +1,41 @@
 <h1 align="center" style="font-weight: bold;">Crossy Road 🐔</h1>
 
+<h1>Crossy Road em C</h1>
+
+<p>Este projeto é uma recriação do popular jogo <strong>Crossy Road</strong>, desenvolvido em linguagem C. Criado por um time de três pessoas, o objetivo é trazer a experiência de desviar de obstáculos e atravessar ruas e rios para um ambiente de terminal, utilizando a lógica de programação e os conceitos da linguagem C.</p>
+
+<h2>Objetivo do Jogo</h2>
+<p>No Crossy Road, o jogador controla um personagem que precisa atravessar o maior número possível de faixas de trânsito e rios sem ser atingido por obstáculos ou cair na água. A pontuação aumenta a cada nova faixa cruzada com sucesso.</p>
+
+<h2>Funcionalidades</h2>
+<ul>
+  <li><strong>Movimentação por Teclado:</strong> Controle o personagem usando as teclas de direção.</li>
+  <li><strong>Obstáculos Aleatórios:</strong> Carros, troncos e outros obstáculos aparecem aleatoriamente para aumentar o desafio.</li>
+  <li><strong>Pontuação Dinâmica:</strong> O jogo exibe a pontuação do jogador com base nas faixas atravessadas.</li>
+  <li><strong>Gráficos ASCII:</strong> A interface do jogo é desenhada com gráficos em ASCII, permitindo uma experiência visual simples e divertida no terminal.</li>
+</ul>
+
+<h2>Estrutura do Código</h2>
+<p>Este projeto foi dividido em múltiplas funções e utiliza conceitos fundamentais de programação em C, como structs e manipulação de ponteiros, para a criação do personagem, obstáculos e cenário.</p>
+
+<h2>Como Executar</h2>
+<ol>
+  <li>Clone o repositório:
+    <pre><code>git clone https://github.com/seu-usuario/crossy-road-em-c.git</code></pre>
+  </li>
+  <li>Compile o código:
+    <pre><code>gcc main.c -o crossy-road</code></pre>
+  </li>
+  <li>Execute o jogo:
+    <pre><code>./crossy-road</code></pre>
+  </li>
+</ol>
+
+<p>Divirta-se jogando e desafiando seus amigos para ver quem consegue a maior pontuação!</p>
+
+
+
+
 <p align="center">
  <a href="#colab">Colaboradores</a> 
 </p>
