@@ -23,15 +23,34 @@ int main() {
     while (1) {
         if (keyhit()) {
             ch = readch();    
-            handle_menu_input(ch);
+            handle_menu_input(ch); // Processa a entrada do menu
             display_menu();  
         }
         
-        // Se Enter for pressionado, inicia o jogo
-        if (ch == 10) {
-            play_game();
-            ch = 0;
-            display_menu(); // Retorna ao menu após o jogo
+        // Se Enter for pressionado e o usuário estiver no menu principal
+        if (ch == 10 && current_option == 0) { // Verifica se está na opção de iniciar jogo
+            display_difficulty_menu(); // Exibe o menu de seleção de dificuldade
+
+            // Enquanto a dificuldade não for escolhida, espera pela entrada do usuário
+            while (1) {
+                if (keyhit()) {
+                    ch = readch();    
+                    handle_difficulty_input(ch); // Processa a entrada da dificuldade
+                    display_difficulty_menu(); // Atualiza a tela de dificuldade
+
+                    // Se Enter for pressionado, inicia o jogo
+                    if (ch == 10) {
+                        play_game(); // Inicia o jogo
+                        ch = 0; // Reseta a entrada
+                        show_high_scores;
+                        break; // Sai do loop de dificuldade
+                    }
+                }
+
+                if (timerTimeOver() == 1) {
+                    screenUpdate();
+                }
+            }
         } 
         // Se Esc for pressionado, sai do jogo
         else if (ch == 27) { // 27 é o código ASCII para Esc

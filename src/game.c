@@ -9,6 +9,7 @@
 
 Player player;
 Car cars[TOTAL_ROADS];
+
 int game_over = 0;
 int score = 0; // Inicializa a pontuação
 int last_road_index = -1; // Índice da última rua atravessada
@@ -65,16 +66,26 @@ void init_game() {
     score = 0; // Reseta a pontuação ao iniciar o jogo
     last_road_index = -1; // Reinicia o índice da última rua
 
+    // Configuração de carros para dificuldade
     for (int i = 0; i < TOTAL_ROADS; i++) {
         cars[i].y = i * (ROAD_HEIGHT + 1) + 1;
-        cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH) + SIDEWALK_WIDTH;
+
+        if (difficulty == 3) { // Dificuldade difícil
+            // Gera carros em posições adequadas
+            cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH - 6) + SIDEWALK_WIDTH; // Espaço para 3 carros
+        } else {
+            cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH) + SIDEWALK_WIDTH;
+        }
         cars[i].direction = (rand() % 2) == 0 ? 1 : -1;
     }
 }
 
 void update() {
+    // Atualiza a posição dos carros
     for (int i = 0; i < TOTAL_ROADS; i++) {
         cars[i].x += cars[i].direction;
+        
+        // Verifica os limites da tela
         if (cars[i].x >= WIDTH - SIDEWALK_WIDTH) {
             cars[i].x = WIDTH - SIDEWALK_WIDTH - 1;
             cars[i].direction = -1;
@@ -84,9 +95,15 @@ void update() {
         }
     }
 
+    // Verifica colisão com todos os carros
     for (int i = 0; i < TOTAL_ROADS; i++) {
-        if (cars[i].y == player.y && player.x >= cars[i].x - 1 && player.x <= cars[i].x + 1) {
-            game_over = 1; // Colisão com carro
+        // Verifica se a galinha está na mesma linha que o carro
+        if (cars[i].y == player.y) {
+            // Verifica as posições de colisão, considerando o terceiro carro
+            if (player.x >= cars[i].x - 1 && player.x <= cars[i].x + 6) { // Considera deslocamento para 3 carros
+                game_over = 1; // Colisão com carro
+                break; // Para verificar a colisão uma vez
+            }
         }
     }
 
@@ -113,6 +130,7 @@ void update() {
         last_road_index = -1; // Reseta o índice ao reiniciar
     }
 }
+
 
 int play_game() {
     srand(time(NULL));
