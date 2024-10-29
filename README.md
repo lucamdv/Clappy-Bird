@@ -9,8 +9,8 @@
 
 <h2>Funcionalidades</h2>
 <ul>
-  <li><strong>Movimentação por Teclado:</strong> Controle o personagem usando as teclas de direção.</li>
-  <li><strong>Obstáculos Aleatórios:</strong> Carros, troncos e outros obstáculos aparecem aleatoriamente para aumentar o desafio.</li>
+  <li><strong>Movimentação por Teclado:</strong> Controle o personagem usando as teclas de direção (W, A, S, D).</li>
+  <li><strong>Obstáculos Aleatórios:</strong> Carros aparecem para aumentar o desafio.</li>
   <li><strong>Pontuação Dinâmica:</strong> O jogo exibe a pontuação do jogador com base nas faixas atravessadas.</li>
   <li><strong>Gráficos ASCII:</strong> A interface do jogo é desenhada com gráficos em ASCII, permitindo uma experiência visual simples e divertida no terminal.</li>
 </ul>
@@ -27,7 +27,7 @@
     <pre><code>gcc main.c -o crossy-road</code></pre>
   </li>
   <li>Execute o jogo:
-    <pre><code>./crossy-road</code></pre>
+    <pre><code>./crossy_road</code></pre>
   </li>
 </ol>
 
