@@ -17,10 +17,6 @@ typedef struct {
     int score;
 } HighScoreEntry;
 
-void show_high_scores();
-void save_high_scores();
-void load_high_scores();
-void update_high_scores(const char *player_name, int new_score);
 
 typedef struct {
     int x;
@@ -44,5 +40,9 @@ void init_game();
 void update();
 int play_game();
 long get_time(); // Adicione a declaração
+void show_high_scores();
+void save_high_scores();
+void load_high_scores();
+void update_high_scores(const char *player_name, int new_score);
 
 #endif // GAME_H
