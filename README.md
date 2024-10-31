@@ -35,6 +35,7 @@
 
 <ol>
 <h3>Arquivo para explicação do código</h3>
+  <br>
 <a href="https://docs.google.com/document/d/1FYFCpXe9twNzsmNzdYfx2t5PDkd_Zovg29jeLHv2ta4/edit?usp=sharing" style="text-decoration: none;">
  <span>🔗 Arquivo para explicação do código</span>
 </ol>
@@ -54,6 +55,7 @@ CESAR SCHOOL
 </p>
 
 <h2 id="colab">🤝 Colaboradores</h2>
+<br>
 
 Nossa equipe:
 
