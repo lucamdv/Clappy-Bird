@@ -33,9 +33,11 @@
 
 <p>Divirta-se jogando e desafiando seus amigos para ver quem consegue a maior pontuação!</p>
 
+<ol>
 <h3>Arquivo para explicação do código</h3>
 <a href="https://docs.google.com/document/d/1FYFCpXe9twNzsmNzdYfx2t5PDkd_Zovg29jeLHv2ta4/edit?usp=sharing" style="text-decoration: none;">
  <span>🔗 Arquivo para explicação do código</span>
+</ol>
   
 <p align="center">
  <a href="#colab">Colaboradores</a> 
