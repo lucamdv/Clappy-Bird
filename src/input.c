@@ -19,5 +19,5 @@ char get_char_non_blocking() {
 }
 
 char get_key_pressed() {
-    return get_char_non_blocking(); // Certifique-se de que essa função está correta
+    return get_char_non_blocking(); 
 }

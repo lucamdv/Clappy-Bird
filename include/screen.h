@@ -2,14 +2,14 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-// Limpa a tela
+
 void clear_screen();
 
-// Renderiza o jogo na tela
+
 void render_game();
 
-#define TITLE_WIDTH 80  // Ajuste conforme o tamanho da sua tela
-#define TITLE_HEIGHT 24 // Ajuste conforme o tamanho da sua tela
+#define TITLE_WIDTH 80  
+#define TITLE_HEIGHT 24 
 
 // Terminal control sequences
 #define ESC            "\033"

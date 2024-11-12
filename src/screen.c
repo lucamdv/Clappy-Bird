@@ -3,50 +3,49 @@
 #include "screen.h"
 #include "game.h"
 
-int difficulty;  // Variável global de dificuldade
+int difficulty;  
 
-// Limpa a tela do terminal
 void clear_screen() {
     system("clear");
 }
 
-// Renderiza o jogo na tela
-void render_game() {
-    clear_screen();  // Limpar a tela antes de desenhar
 
-    // Exibe a pontuação no canto superior da tela
-    screenGotoxy(1, 1); // Ajuste a posição conforme necessário
+void render_game() {
+    clear_screen();  
+
+    
+    screenGotoxy(1, 1); 
     printf("Pontuação: %d", score);
     
-    // Desenhar a moldura
+    
     for (int x = 0; x < WIDTH + 2; x++) printf("-");
     printf("\n");
 
     for (int y = 0; y < HEIGHT; y++) {
-        printf("|");  // Início da linha da moldura
+        printf("|");  
 
         for (int x = 0; x < WIDTH; x++) {
             if (y == player.y && x == player.x) {
-                printf("🐔");  // Galinha
+                printf("🐔");  
             } else {
                 int is_car = 0;
 
-                // Renderiza carros de acordo com a dificuldade
+                
                 for (int i = 0; i < TOTAL_ROADS; i++) {
-                    if (y == cars[i].y) { // Verifica se o carro está na mesma linha
-                        if (difficulty == 3) { // Dificuldade difícil
+                    if (y == cars[i].y) { /
+                        if (difficulty == 3) { 
                             if (x == cars[i].x || x == cars[i].x + 4 || x == cars[i].x + 8) {
                                 printf("🚗");
                                 is_car = 1;
                                 break;
                             }
-                        } else if (difficulty == 2) { // Dificuldade média
+                        } else if (difficulty == 2) { 
                             if (x == cars[i].x || x == cars[i].x + 6) {
                                 printf("🚗");
                                 is_car = 1;
                                 break;
                             }
-                        } else { // Dificuldade fácil
+                        } else { 
                             if (x == cars[i].x) {
                                 printf("🚗");
                                 is_car = 1;
@@ -58,9 +57,9 @@ void render_game() {
 
                 if (!is_car) {
                     if (y % (ROAD_HEIGHT + 1) == 0) {
-                        printf("██");  // Calçada
+                        printf("██");  
                     } else {
-                        printf("  ");  // Rua
+                        printf("  ");  
                     }
                 }
             }
@@ -71,7 +70,7 @@ void render_game() {
     for (int x = 0; x < WIDTH + 2; x++) printf("-");
     printf("\n");
 
-    // Atualiza a tela
+    
     screenUpdate();
 }
 

@@ -1,17 +1,17 @@
 #include "timer.h"
 #include <sys/time.h>
 #include <stdio.h>
-#include <unistd.h>  // Incluído para usar usleep
+#include <unistd.h>  
 
 static struct timeval timer, now;
-static int timerDelay = -1;  // Variável para armazenar um atraso em milissegundos
+static int timerDelay = -1; 
 
 long get_time() {
-    return getTimeDiff(); // Agora deve funcionar sem avisos
+    return getTimeDiff(); 
 }
 
 void delay(unsigned int milliseconds) {
-    usleep(milliseconds * 1000); // Atraso em microsegundos
+    usleep(milliseconds * 1000); 
 }
 
 void timerInit(int valueMilliSec) {

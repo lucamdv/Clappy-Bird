@@ -5,7 +5,7 @@
 static struct termios initialSettings, newSettings;
 static int peekCharacter;
 
-// Função para capturar a tecla pressionada
+
 char get_keypress() {
     struct termios oldt, newt;
     char ch;
@@ -18,12 +18,12 @@ char get_keypress() {
     return ch;
 }
 
-// Mapeia as teclas para ações no jogo
+
 void handle_input(char key) {
-    if (key == 'w' && player.y > 1) player.y--;  // Mover para cima
-    if (key == 's' && player.y < HEIGHT - 2) player.y++;  // Mover para baixo
-    if (key == 'a' && player.x > SIDEWALK_WIDTH) player.x--;  // Mover para esquerda
-    if (key == 'd' && player.x < WIDTH - SIDEWALK_WIDTH - 1) player.x++;  // Mover para direita
+    if (key == 'w' && player.y > 1) player.y--;  
+    if (key == 's' && player.y < HEIGHT - 2) player.y++;  
+    if (key == 'a' && player.x > SIDEWALK_WIDTH) player.x--;  
+    if (key == 'd' && player.x < WIDTH - SIDEWALK_WIDTH - 1) player.x++;  
 }
 /**
  * keyboard.h
