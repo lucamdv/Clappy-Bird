@@ -66,13 +66,11 @@ void init_game() {
     score = 0; 
     last_road_index = -1; 
 
-    
     for (int i = 0; i < TOTAL_ROADS; i++) {
         cars[i].y = i * (ROAD_HEIGHT + 1) + 1;
 
         if (difficulty == 3) { 
-            
-            cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH - 6) + SIDEWALK_WIDTH; 
+            cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH - 6) + SIDEWALK_WIDTH;
         } else {
             cars[i].x = rand() % (WIDTH - 2 * SIDEWALK_WIDTH) + SIDEWALK_WIDTH;
         }
@@ -81,10 +79,8 @@ void init_game() {
 }
 
 void update() {
-    
     for (int i = 0; i < TOTAL_ROADS; i++) {
         cars[i].x += cars[i].direction;
-        
         
         if (cars[i].x >= WIDTH - SIDEWALK_WIDTH) {
             cars[i].x = WIDTH - SIDEWALK_WIDTH - 1;
@@ -95,31 +91,24 @@ void update() {
         }
     }
 
-    
     for (int i = 0; i < TOTAL_ROADS; i++) {
-        o
         if (cars[i].y == player.y) {
-            
             if (player.x >= cars[i].x - 1 && player.x <= cars[i].x + 6) { 
-                game_over = 1; 
+                game_over = 1;
                 break; 
             }
         }
     }
 
-    
     int current_road_index = player.y / (ROAD_HEIGHT + 1);
-    
     
     if (current_road_index < TOTAL_ROADS && current_road_index != last_road_index) {
         score += 10; 
-        last_road_index = current_road_index; 
+        last_road_index = current_road_index;
     }
 
-    
     if (player.y <= 1) {
-        player.y = HEIGHT - 2; 
-
+        player.y = HEIGHT - 2;
         for (int i = 0; i < TOTAL_ROADS; i++) {
             cars[i].y += ROAD_HEIGHT + 1;
             if (cars[i].y >= HEIGHT - 1) {
@@ -155,22 +144,21 @@ int play_game() {
             last_frame_time = current_time;
         }
         
-        delay(16);  
+        delay(16); 
         render_game(); 
     } 
     
     printf("Game Over! Sua pontuação: %d. Pressione Enter para voltar ao menu.\n", score);
-    
     
     if (score > high_scores[MAX_SCORES - 1].score) {
         char player_name[20];
         printf("Novo recorde! Sua pontuação: %d. Digite seu nome: ", score);
         scanf("%s", player_name); 
         update_high_scores(player_name, score); 
-        save_high_scores(); 
+        save_high_scores();
     }
 
-    show_high_scores(); 
+    show_high_scores();
     game_over = 0; 
     return 0;
 }

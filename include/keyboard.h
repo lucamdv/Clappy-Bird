@@ -5,9 +5,7 @@
 #include <unistd.h>
 #include <termios.h>
 
-
 char get_keypress();
-
 
 void handle_input(char key);
 

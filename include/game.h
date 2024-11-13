@@ -5,7 +5,7 @@
 #define HEIGHT 20
 #define SIDEWALK_WIDTH 2
 #define ROAD_HEIGHT 1 
-#define TOTAL_ROADS ((HEIGHT - 2) / (ROAD_HEIGHT + 1)) 
+#define TOTAL_ROADS ((HEIGHT - 2) / (ROAD_HEIGHT + 1))
 #define MAX_SCORES 5
 #define EASY 1
 #define MEDIUM 2

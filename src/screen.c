@@ -9,14 +9,11 @@ void clear_screen() {
     system("clear");
 }
 
-
 void render_game() {
     clear_screen();  
 
-    
     screenGotoxy(1, 1); 
     printf("Pontuação: %d", score);
-    
     
     for (int x = 0; x < WIDTH + 2; x++) printf("-");
     printf("\n");
@@ -30,9 +27,8 @@ void render_game() {
             } else {
                 int is_car = 0;
 
-                
                 for (int i = 0; i < TOTAL_ROADS; i++) {
-                    if (y == cars[i].y) { /
+                    if (y == cars[i].y) { 
                         if (difficulty == 3) { 
                             if (x == cars[i].x || x == cars[i].x + 4 || x == cars[i].x + 8) {
                                 printf("🚗");
@@ -59,7 +55,7 @@ void render_game() {
                     if (y % (ROAD_HEIGHT + 1) == 0) {
                         printf("██");  
                     } else {
-                        printf("  ");  
+                        printf("  "); 
                     }
                 }
             }
@@ -70,7 +66,6 @@ void render_game() {
     for (int x = 0; x < WIDTH + 2; x++) printf("-");
     printf("\n");
 
-    
     screenUpdate();
 }
 
@@ -120,7 +115,7 @@ void screenInit(int drawBorders) {
 }
 
 void screenDestroy() {
-    printf("%s[0;39;49m", ESC); // Reset colors
+    printf("%s[0;39;49m", ESC); 
     screenSetNormal();
     screenClear();
     screenHomeCursor();

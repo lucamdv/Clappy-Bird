@@ -5,7 +5,6 @@
 static struct termios initialSettings, newSettings;
 static int peekCharacter;
 
-
 char get_keypress() {
     struct termios oldt, newt;
     char ch;
@@ -18,12 +17,11 @@ char get_keypress() {
     return ch;
 }
 
-
 void handle_input(char key) {
-    if (key == 'w' && player.y > 1) player.y--;  
-    if (key == 's' && player.y < HEIGHT - 2) player.y++;  
+    if (key == 'w' && player.y > 1) player.y--; 
+    if (key == 's' && player.y < HEIGHT - 2) player.y++; 
     if (key == 'a' && player.x > SIDEWALK_WIDTH) player.x--;  
-    if (key == 'd' && player.x < WIDTH - SIDEWALK_WIDTH - 1) player.x++;  
+    if (key == 'd' && player.x < WIDTH - SIDEWALK_WIDTH - 1) player.x++; 
 }
 /**
  * keyboard.h

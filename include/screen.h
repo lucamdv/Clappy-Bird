@@ -2,13 +2,11 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-
 void clear_screen();
-
 
 void render_game();
 
-#define TITLE_WIDTH 80  
+#define TITLE_WIDTH 80 
 #define TITLE_HEIGHT 24 
 
 // Terminal control sequences

@@ -1,10 +1,10 @@
 #include "timer.h"
 #include <sys/time.h>
 #include <stdio.h>
-#include <unistd.h>  
+#include <unistd.h> 
 
 static struct timeval timer, now;
-static int timerDelay = -1; 
+static int timerDelay = -1;  
 
 long get_time() {
     return getTimeDiff(); 
